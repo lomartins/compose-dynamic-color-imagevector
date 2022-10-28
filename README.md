@@ -87,11 +87,11 @@ Just turn your function into a composable function and use the `MaterialTheme.co
 ```kotlin
 @Composable
 fun makeIcon(
-    ...
+    // ...
     backgroundColor: Color = Color(0xFF44475A),
     primaryColor: Color = MaterialTheme.colors.primary,
     secondaryColor: Color = MaterialTheme.colors.secondary,
 ): ImageVector {
-    ...
+    // ...
 }
 ```
