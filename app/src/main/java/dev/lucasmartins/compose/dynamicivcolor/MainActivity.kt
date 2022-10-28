@@ -44,7 +44,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    Greeting("Android")
+                    Greeting()
                 }
             }
         }
@@ -87,7 +87,7 @@ fun makeIcon(
 }
 
 @Composable
-fun Greeting(name: String) {
+fun Greeting() {
     var primaryColor by remember { mutableStateOf(Color(0xFF50FA7B)) }
     var secondaryColor by remember { mutableStateOf(Color(0xFFff79c6)) }
     Column(
@@ -102,8 +102,8 @@ fun Greeting(name: String) {
             ), contentDescription = null
         )
         Text(
-            text = "Escolha a cor primária",
-            fontSize = 32.sp,
+            text = "Choose the primary color",
+            fontSize = 24.sp,
             modifier = Modifier.fillMaxWidth().padding(16.dp),
             textAlign = TextAlign.Center,
         )
@@ -115,25 +115,25 @@ fun Greeting(name: String) {
                 onClick = { primaryColor = Color(0xFF50FA7B) },
                 colors = ButtonDefaults.buttonColors(backgroundColor = Color(0xFF50FA7B))
             ) {
-                Text(text = "Verde")
+                Text(text = "Green")
             }
             Button(
                 onClick = { primaryColor = Color(0xFFBD93F9) },
                 colors = ButtonDefaults.buttonColors(backgroundColor = Color(0xFFBD93F9))
             ) {
-                Text(text = "Roxo")
+                Text(text = "Purple")
             }
             Button(
                 onClick = { primaryColor = Color(0xFFFF5555) },
                 colors = ButtonDefaults.buttonColors(backgroundColor = Color(0xFFFF5555))
             ) {
-                Text(text = "Vermelho")
+                Text(text = "Red")
             }
         }
 
         Text(
-            text = "Escolha a cor secundária",
-            fontSize = 32.sp,
+            text = "Choose the secondary color",
+            fontSize = 24.sp,
             modifier = Modifier.fillMaxWidth().padding(16.dp),
             textAlign = TextAlign.Center,
         )
@@ -145,19 +145,19 @@ fun Greeting(name: String) {
                 onClick = { secondaryColor = Color(0xFFff79c6) },
                 colors = ButtonDefaults.buttonColors(backgroundColor = Color(0xFFff79c6))
             ) {
-                Text(text = "Rosa")
+                Text(text = "Pink")
             }
             Button(
                 onClick = { secondaryColor = Color(0xFFffb86c) },
                 colors = ButtonDefaults.buttonColors(backgroundColor = Color(0xFFffb86c))
             ) {
-                Text(text = "Laranja")
+                Text(text = "Orange")
             }
             Button(
                 onClick = { secondaryColor = Color(0xFF8be9fd) },
                 colors = ButtonDefaults.buttonColors(backgroundColor = Color(0xFF8be9fd))
             ) {
-                Text(text = "Ciano")
+                Text(text = "Cyan")
             }
         }
     }
@@ -167,6 +167,6 @@ fun Greeting(name: String) {
 @Composable
 fun DefaultPreview() {
     DynamicColorImageVectorTheme {
-        Greeting("Android")
+        Greeting()
     }
 }
