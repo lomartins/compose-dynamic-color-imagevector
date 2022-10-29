@@ -4,6 +4,7 @@ import dev.lucasmartins.compose.dynamicivcolor.ui.theme.DynamicColorImageVectorT
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.animation.animateColorAsState
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -90,14 +91,18 @@ fun makeIcon(
 fun Greeting() {
     var primaryColor by remember { mutableStateOf(Color(0xFF50FA7B)) }
     var secondaryColor by remember { mutableStateOf(Color(0xFFff79c6)) }
+
+    val primaryColorAnimation by animateColorAsState(targetValue = primaryColor)
+    val secondaryColorAnimation by animateColorAsState(targetValue = secondaryColor)
+
     Column(
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         Image(
             imageVector = makeIcon(
-                primaryColor = primaryColor,
-                secondaryColor = secondaryColor,
+                primaryColor = primaryColorAnimation,
+                secondaryColor = secondaryColorAnimation,
                 backgroundColor = Color(0xFF282a36)
             ), contentDescription = null
         )
